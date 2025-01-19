@@ -15,12 +15,12 @@ function Card({ cards }: CardListProps) {
     return(
         <>
             {cards.map((card, index) => (
-               <li key={index}>
+               <div key={index}>
                     <div>
                         <div> <img src={card.imageUrl} alt={card.name}/> </div>
                         <h2>{card.name}</h2>
                     </div>
-                </li> 
+                </div> 
             ))}
         </>
     );

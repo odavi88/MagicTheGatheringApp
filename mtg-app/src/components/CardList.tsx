@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react";
 import Card from "./Card";
+import './styles.css';
 
 
 // Card list component here:
@@ -26,9 +27,9 @@ function CardList() {
     }, []);
 
     return(
-       <ul>
+       <div className="card-list">
             <Card cards={ cardArray } /> 
-       </ul>
+       </div>
     );
 };
 
