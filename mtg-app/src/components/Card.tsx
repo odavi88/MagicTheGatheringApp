@@ -4,6 +4,7 @@ interface Card {
     name: string;
     colorsIdentity: string[];
     subtypes: string[];
+    setName: string;
     imageUrl: string;
 };
 
@@ -16,9 +17,12 @@ function Card({ cards }: CardListProps) {
         <>
             {cards.map((card, index) => (
                <div key={index}>
-                    <div>
-                        <div> <img src={card.imageUrl} alt={card.name}/> </div>
-                        <h2>{card.name}</h2>
+                    <div className="card-container">
+                        <div> <img src={!card.imageUrl ? `https://i.imgur.com/LdOBU1I.jpg` : card.imageUrl} height={375} width={250} alt={card.name}/> </div>
+                        <div className="card-info">
+                            <h3>{card.name}</h3>
+                            <p>{ card.setName }</p>
+                        </div>
                     </div>
                 </div> 
             ))}
