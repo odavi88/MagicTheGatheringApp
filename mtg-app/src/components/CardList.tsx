@@ -8,11 +8,12 @@ function CardList() {
     // using useState hook to store an empty array of type Card and a function that will update the cards array:
     const [cardArray, setCards] = useState<Card[]>([]);
 
+    const [query, setQuery] = useState('');
     
     //  useEffect hook here:
     useEffect(() => {
         // passing in the endpoint to fetch request:
-        fetch(`https://api.magicthegathering.io/v1/cards`)
+        fetch(`https://api.magicthegathering.io/v1/cards?name=${ query }`)
             // converting response into json:
             .then(response => {
                 if(!response.ok) {
