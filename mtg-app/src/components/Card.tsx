@@ -21,7 +21,7 @@ function Card({ cards }: CardListProps) {
                         <div> <img src={!card.imageUrl ? `https://i.imgur.com/LdOBU1I.jpg` : card.imageUrl} height={375} width={250} alt={card.name}/> </div>
                         <div className="card-info">
                             <h3>{card.name}</h3>
-                            <p>{ card.setName }</p>
+                            <p>Set: { card.setName }</p>
                         </div>
                     </div>
                 </div> 
